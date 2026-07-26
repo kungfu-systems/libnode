@@ -16,8 +16,8 @@
   "state_ref": "buildchain/release-state/22-22-3-kf-5-alpha-1",
   "state_path": "/home/runner/work/libnode/libnode/.buildchain/release-state/v22.22.2-alpha.0.json",
   "evidence_path": "/home/runner/work/libnode/libnode/.buildchain/release-evidence/v22.22.2-alpha.0/evidence.json",
-  "state": "published",
-  "previous_state": "publishing",
+  "state": "finalizing",
+  "previous_state": "published",
   "actor": "dongkeren",
   "run_id": "30204029353",
   "superseded_by": "",
@@ -74,5 +74,5 @@
     ".buildchain/release-evidence/v22.22.2-alpha.0/dist-tag-evidence.json"
   ],
   "created_at": "2026-07-26T13:28:09.068Z",
-  "updated_at": "2026-07-26T13:29:08.188Z"
+  "updated_at": "2026-07-26T13:29:10.070Z"
 }
