@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v7.0.0
 
       - name: Validate Buildchain config
-        uses: kungfu-systems/buildchain/actions/validate-config@v2
+        uses: kungfu-systems/buildchain/actions/validate-config@v3
         with:
           config-required: 'true'
           require-version-state: 'true'

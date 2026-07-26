@@ -19,7 +19,7 @@ concurrency:
 
 jobs:
   build:
-    uses: kungfu-systems/buildchain/.github/workflows/build.yml@v2
+    uses: kungfu-systems/buildchain/.github/workflows/build.yml@v3
     with:
       runner-preset: custom
       platforms-json: >-

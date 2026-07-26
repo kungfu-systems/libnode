@@ -20,7 +20,7 @@ concurrency:
 
 jobs:
   promote:
-    uses: kungfu-systems/buildchain/.github/workflows/release-candidate-promote.yml@v2-alpha
+    uses: kungfu-systems/buildchain/.github/workflows/release-candidate-promote.yml@v3-alpha
     secrets: inherit
     with:
       package-manager: pnpm

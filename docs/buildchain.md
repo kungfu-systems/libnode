@@ -1,6 +1,6 @@
 # Buildchain Release Notes
 
-`libnode` uses Buildchain v2 for shared Kungfu GitHub Actions and for
+`libnode` uses Buildchain v3 for shared Kungfu GitHub Actions and for
 repository-local lifecycle metadata.
 
 ## Version State
@@ -10,7 +10,7 @@ For this repository the package version follows the upstream Node.js version
 that the embedded `node` submodule builds, plus a libnode package revision, for
 example `22.22.3-kf.0`.
 
-This repository uses Buildchain v2 anchored/manual version semantics:
+This repository uses Buildchain v3 anchored/manual version semantics:
 
 - `package.json#version` remains the npm package version.
 - `libnode.release.json` is the anchor manifest for the upstream Node.js tag,
@@ -49,7 +49,7 @@ packages release-oriented while allowing diagnostics runs to opt out with
 ## No-build Preflight
 
 The migration can be validated before running the expensive native build. The
-published Buildchain v2 `validate-config` action checks that
+published Buildchain v3 `validate-config` action checks that
 `buildchain.toml` is present, that `package.json#version` is readable as version
 state, that `libnode.release.json` is present as the anchor manifest, and that
 the required `install`, `build`, and `verify` lifecycle stages are declared.
@@ -62,7 +62,7 @@ The repository runs this check through
 and release lines:
 
 ```yaml
-uses: kungfu-systems/buildchain/actions/validate-config@v2
+uses: kungfu-systems/buildchain/actions/validate-config@v3
 with:
   config-required: 'true'
   require-version-state: 'true'
@@ -95,7 +95,7 @@ Actual npm publication is driven by reviewed Buildchain channel promotion, not
 by ad hoc publish branches. A pull request into `alpha/vN/vN.M` or
 `release/vN/vN.M` builds the native matrix once and uploads a
 release-candidate passport. After that PR is merged, the release workflow uses
-Buildchain `release-candidate-promote.yml@v2` to validate the PR-stage passport,
+Buildchain `release-candidate-promote.yml@v3` to validate the PR-stage passport,
 lock the corresponding `publish-gate/*` source ref, and publish without a second
 native rebuild. A merge into `alpha/vN/vN.M` publishes the package set with npm
 dist-tag `alpha`. A merge into `release/vN/vN.M` publishes the final package set
@@ -107,10 +107,10 @@ release/v22/v22.22
 ```
 
 The `Release - New Version` workflow calls Buildchain
-`release-candidate-promote.yml@v2` against the merged channel branch tip. The
+`release-candidate-promote.yml@v3` against the merged channel branch tip. The
 wrapper resolves the matching same-repository PR-stage `Build` run, downloads
 its release-candidate passport and npm tarballs, verifies source/tree
-equivalence, locks `publish-gate/*`, and then calls `promote-buildchain-ref@v2`
+equivalence, locks `publish-gate/*`, and then calls `promote-buildchain-ref@v3`
 with `publish-transaction: true`. Npm publication and Buildchain ref/tag
 promotion are one transaction with durable `buildchain/release-state/<version>`
 state and `BUILDCHAIN_PUBLISH_EVIDENCE`.
