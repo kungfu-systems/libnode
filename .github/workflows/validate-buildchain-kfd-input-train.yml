@@ -1,6 +1,9 @@
 name: Validate Buildchain KFD Input Train
 
 on:
+  pull_request:
+    branches:
+      - alpha/v22/v22.22
   workflow_dispatch:
 
 permissions:
