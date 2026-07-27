@@ -11,7 +11,7 @@
   "sourceRegistry": {
     "id": "libnode-release-contract",
     "path": "libnode.release.json",
-    "version": "22.22.3-kf.5-alpha.2"
+    "version": "22.22.3-kf.5-alpha.3"
   },
   "collaborationInterfaceDigest": "sha256:bbdfc87c532fe50fca92ca8415fc624af95c79fa7c9a4825efcee233701bd8c8",
   "collaborationInterface": {
@@ -65,6 +65,16 @@
       {
         "id": "npm:platform-linux-x64",
         "name": "@kungfu-tech/libnode-linux-x64 package",
+        "kind": "platform-package",
+        "availability": "shipped",
+        "visibility": "public",
+        "participantFacing": true,
+        "public": true,
+        "sourcePath": ".gyp/node-platform-package.js"
+      },
+      {
+        "id": "npm:platform-linux-arm64",
+        "name": "@kungfu-tech/libnode-linux-arm64 package",
         "kind": "platform-package",
         "availability": "shipped",
         "visibility": "public",

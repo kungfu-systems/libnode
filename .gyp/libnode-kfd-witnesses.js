@@ -62,6 +62,7 @@ function writeIfChanged(relativePath, text) {
 function generatedKfd3Prebuild() {
   const release = readJson(paths.release);
   const prebuild = readJson(paths.kfd3Prebuild);
+  const collaborationInterface = readJson(paths.kfd3Interface);
   const interfaceDigest = `sha256:${sha256File(paths.kfd3Interface)}`;
 
   prebuild.sourceRegistry = {
@@ -69,9 +70,15 @@ function generatedKfd3Prebuild() {
     version: release.npmVersion,
   };
   prebuild.collaborationInterfaceDigest = interfaceDigest;
-  if (prebuild.collaborationInterface && typeof prebuild.collaborationInterface === 'object') {
-    prebuild.collaborationInterface.digest = interfaceDigest;
-  }
+  prebuild.collaborationInterface = {
+    schemaVersion: collaborationInterface.schemaVersion,
+    contract: collaborationInterface.contract,
+    digest: interfaceDigest,
+    product: collaborationInterface.product,
+    participants: collaborationInterface.participants,
+    surfaces: collaborationInterface.surfaces,
+    closure: collaborationInterface.closure,
+  };
 
   return prebuild;
 }
