@@ -97,9 +97,9 @@
     {
       "name": "kfd3-prebuild-witness",
       "sourcePath": ".buildchain/kfd-3/collaboration-interface.prebuild.json",
-      "sourceSha256": "2feac3dd0e9b1ad19de8cc889c470c214229c71346baf49273a4c9f4ba0831f1",
+      "sourceSha256": "2c597cda7a4ec550e684eaebfefd4dec8527864fb8b0ebcad5e0c70ccfe6e5ee",
       "artifactPath": ".buildchain/kfd-3/collaboration-interface.prebuild.json",
-      "expectedSha256": "2feac3dd0e9b1ad19de8cc889c470c214229c71346baf49273a4c9f4ba0831f1",
+      "expectedSha256": "2c597cda7a4ec550e684eaebfefd4dec8527864fb8b0ebcad5e0c70ccfe6e5ee",
       "byteForByte": true
     }
   ]

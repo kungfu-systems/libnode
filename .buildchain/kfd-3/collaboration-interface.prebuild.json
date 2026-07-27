@@ -73,6 +73,16 @@
         "sourcePath": ".gyp/node-platform-package.js"
       },
       {
+        "id": "npm:platform-linux-arm64",
+        "name": "@kungfu-tech/libnode-linux-arm64 package",
+        "kind": "platform-package",
+        "availability": "shipped",
+        "visibility": "public",
+        "participantFacing": true,
+        "public": true,
+        "sourcePath": ".gyp/node-platform-package.js"
+      },
+      {
         "id": "npm:platform-win32-x64",
         "name": "@kungfu-tech/libnode-win32-x64 package",
         "kind": "platform-package",
