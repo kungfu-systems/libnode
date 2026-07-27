@@ -4,7 +4,7 @@
     "name": "kungfu-trader",
     "email": "info@kungfu.link"
   },
-  "version": "22.22.3-kf.5-alpha.2",
+  "version": "22.22.3-kf.5-alpha.3",
   "description": "Build shared node lib",
   "license": "Apache-2.0",
   "main": "src/js/index.js",
