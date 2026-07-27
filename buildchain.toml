@@ -76,6 +76,7 @@ command = "corepack pnpm sync-kfd-witnesses"
 [lifecycle.verify]
 timeout_minutes = 10
 commands = [
+  "node --test .gyp/libnode-entrypoint.test.js",
   "corepack pnpm verify-release",
   "corepack pnpm verify-kfd-witnesses",
   "corepack pnpm verify-package-source",
