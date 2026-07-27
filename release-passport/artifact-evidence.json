@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "contract": "kungfu-buildchain-artifact-evidence",
+  "repository": "kungfu-systems/libnode",
+  "release": {
+    "tag": "v22.22.3-kf.5-alpha.3",
+    "sourceSha": "757da0cab3e94380954085693fe997d45f944fb9"
+  },
+  "generatedAt": "2026-07-27T23:10:02.196Z",
+  "runner": {
+    "kind": "github-hosted",
+    "os": "Linux",
+    "arch": "X64",
+    "labels": [],
+    "image": "ubuntu24"
+  },
+  "workflow": {
+    "name": "Release - New Version",
+    "runId": "30312639144",
+    "runAttempt": "2",
+    "url": "https://github.com/kungfu-systems/libnode/actions/runs/30312639144"
+  },
+  "artifacts": []
+}
