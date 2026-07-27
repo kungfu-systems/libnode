@@ -1,0 +1,13 @@
+name: Validate Buildchain KFD Input Train
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-contract:
+    if: ${{ false }}
+    uses: kungfu-systems/buildchain/.github/workflows/release-candidate-promote.yml@train/v3/v3.0/kfd-passport-input-contract
+    secrets: inherit
