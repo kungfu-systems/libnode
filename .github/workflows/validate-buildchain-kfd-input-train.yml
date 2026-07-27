@@ -7,7 +7,12 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  actions: write
+  checks: write
+  contents: write
+  id-token: write
+  issues: write
+  pull-requests: write
 
 jobs:
   validate-contract:
