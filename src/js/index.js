@@ -5,6 +5,7 @@ const rootDir = path.dirname(path.dirname(__dirname));
 const localDistDir = path.join(rootDir, 'dist', 'node');
 const platformPackageNames = {
   'darwin-arm64': '@kungfu-tech/libnode-darwin-arm64',
+  'linux-arm64': '@kungfu-tech/libnode-linux-arm64',
   'linux-x64': '@kungfu-tech/libnode-linux-x64',
   'win32-x64': '@kungfu-tech/libnode-win32-x64',
 };
