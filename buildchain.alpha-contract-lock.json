@@ -3,18 +3,18 @@
   "contract": "kungfu-buildchain-contract-lock",
   "buildchain": {
     "ref": "v3-alpha",
-    "resolvedSha": "9d74fb4557e71992db3516b5ba750d57cb9f3521",
+    "resolvedSha": "15bf4369927d2c23beaf6ff531d52d5e1f6494fa",
     "contract": "kungfu-buildchain-runtime-contract-world",
-    "contractDigest": "sha256:41501b9993621832a124f6ad5180e00b5b9b88435b70ad277cd842f1830aad2c",
-    "compatibilityDigest": "sha256:32a651504c57829085dc8863f0e41dee98eb60708ff6dec958c9c7e4b1010102",
+    "contractDigest": "sha256:a4093c16e292085ad013b11424a4432c3fa6c22ec0d9cd9fe412ec8a42359a7c",
+    "compatibilityDigest": "sha256:61af7d0871220bc0909008bdc571905ad500cccf853e7841bc5d462a34b2d436",
     "majorLine": "v3",
     "compatibilityPolicy": "major-compatible",
-    "acceptedAt": "2026-07-31T12:11:30.000Z",
+    "acceptedAt": "2026-07-31T14:20:11.000Z",
     "surfaces": [
       {
         "id": "reusable-build",
         "kind": "workflow",
-        "breakingDigest": "sha256:a6a35370d6b0d0f46e1b2712dcc01961fe53c2febde95409a27a485c10a36650"
+        "breakingDigest": "sha256:dfbedd543ae0c067982b5c8c02d98dd2f7f7df88752be97fb330da6b0ba30faa"
       },
       {
         "id": "channel-build-router",
@@ -34,7 +34,7 @@
       {
         "id": "web-surface",
         "kind": "workflow",
-        "breakingDigest": "sha256:da569f90374e878948e3d5160ed9929338ce0572473ca8ee54867b0fe1aaeace"
+        "breakingDigest": "sha256:27f0cb9c7d97288850d215be8696b323471c41fd1cdf3a2ff3ebf21f62541960"
       },
       {
         "id": "auditable-demo",
