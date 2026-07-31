@@ -34,6 +34,7 @@ jobs:
       checkout-cache-mirror-url-template: ${{ vars.BUILDCHAIN_CHECKOUT_CACHE_MIRROR_URL_TEMPLATE }}
       checkout-cache-fallback: github
       checkout-cache-timeout-seconds: 60
+      lifecycle-timeout-minutes: 240
       setup-node: true
       node-version: '24'
       install-command: node .gyp/buildchain-install.js "${{ vars.KF_NODE_GIT_URL }}" "${{ vars.KF_NODE_REFERENCE }}"
