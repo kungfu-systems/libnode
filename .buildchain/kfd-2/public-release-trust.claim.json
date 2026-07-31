@@ -1,7 +1,7 @@
 {
   "id": "claim:libnode-public-release-trust",
   "public": true,
-  "claim": "Libnode npm releases are anchored to libnode.release.json, built as a four-platform package set, verified by product-owned package gates, and published through Buildchain trusted publishing.",
+  "claim": "Libnode npm releases are anchored to libnode.release.json, built as a five-platform package set, verified by product-owned package gates, and published through Buildchain trusted publishing.",
   "sourceBindings": [
     {
       "id": "release-manifest",
@@ -52,6 +52,10 @@
     },
     {
       "name": "@kungfu-tech/libnode-darwin-arm64",
+      "kind": "npm-platform-package"
+    },
+    {
+      "name": "@kungfu-tech/libnode-darwin-x64",
       "kind": "npm-platform-package"
     },
     {

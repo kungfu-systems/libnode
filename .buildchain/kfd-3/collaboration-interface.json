@@ -46,6 +46,16 @@
       "sourcePath": ".gyp/node-platform-package.js"
     },
     {
+      "id": "npm:platform-darwin-x64",
+      "name": "@kungfu-tech/libnode-darwin-x64 package",
+      "kind": "platform-package",
+      "availability": "shipped",
+      "visibility": "public",
+      "participantFacing": true,
+      "public": true,
+      "sourcePath": ".gyp/node-platform-package.js"
+    },
+    {
       "id": "npm:platform-linux-x64",
       "name": "@kungfu-tech/libnode-linux-x64 package",
       "kind": "platform-package",
@@ -145,7 +155,7 @@
     "The npm version is anchored to libnode.release.json npmVersion.",
     "The upstream Node version is anchored to libnode.release.json nodeTag and nodeCommit.",
     "The release package set is published platforms-first and main-last.",
-    "macOS arm64, Linux x64, Linux arm64, and Windows x64 platform packages are public release surfaces.",
+    "macOS arm64, macOS x64, Linux x64, Linux arm64, and Windows x64 platform packages are public release surfaces.",
     "macOS and Linux link aliases are materialized by package postinstall policy instead of npm tarball symlinks.",
     "Windows packages must include both DLL and import library outputs."
   ],

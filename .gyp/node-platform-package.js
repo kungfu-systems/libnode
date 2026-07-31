@@ -20,6 +20,14 @@ const platformPackages = [
     aliases: [{ source: 'libnode.*.dylib', match: '^libnode\\.\\d+\\.dylib$', target: 'libnode.dylib' }],
   },
   {
+    key: 'darwin-x64',
+    name: '@kungfu-tech/libnode-darwin-x64',
+    os: ['darwin'],
+    cpu: ['x64'],
+    binaries: ['libnode*.dylib'],
+    aliases: [{ source: 'libnode.*.dylib', match: '^libnode\\.\\d+\\.dylib$', target: 'libnode.dylib' }],
+  },
+  {
     key: 'linux-x64',
     name: '@kungfu-tech/libnode-linux-x64',
     os: ['linux'],
