@@ -57,7 +57,10 @@ cache_dirs = [
 ]
 
 [lifecycle.install]
-timeout_minutes = 10
+# Preparing the pinned Node.js source can transfer more than 1 GiB on a cold
+# macOS x64 runner. Keep this stage bounded while allowing slow GitHub fetches
+# to finish before the native build begins.
+timeout_minutes = 45
 commands = [
   "corepack pnpm install --frozen-lockfile --ignore-scripts",
   "corepack pnpm prepare-node-source",
