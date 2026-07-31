@@ -11,13 +11,13 @@
   "sourceRegistry": {
     "id": "libnode-release-contract",
     "path": "libnode.release.json",
-    "version": "22.22.3-kf.5-alpha.3"
+    "version": "22.22.3-kf.5-alpha.4"
   },
-  "collaborationInterfaceDigest": "sha256:bbdfc87c532fe50fca92ca8415fc624af95c79fa7c9a4825efcee233701bd8c8",
+  "collaborationInterfaceDigest": "sha256:7479a8efa55109007aa414870c754169df64a0d0b5e37f16579acbd5a423e499",
   "collaborationInterface": {
     "schemaVersion": 1,
     "contract": "kfd-3-collaboration-interface",
-    "digest": "sha256:bbdfc87c532fe50fca92ca8415fc624af95c79fa7c9a4825efcee233701bd8c8",
+    "digest": "sha256:7479a8efa55109007aa414870c754169df64a0d0b5e37f16579acbd5a423e499",
     "product": {
       "name": "Libnode",
       "package": "@kungfu-tech/libnode",
@@ -55,6 +55,16 @@
       {
         "id": "npm:platform-darwin-arm64",
         "name": "@kungfu-tech/libnode-darwin-arm64 package",
+        "kind": "platform-package",
+        "availability": "shipped",
+        "visibility": "public",
+        "participantFacing": true,
+        "public": true,
+        "sourcePath": ".gyp/node-platform-package.js"
+      },
+      {
+        "id": "npm:platform-darwin-x64",
+        "name": "@kungfu-tech/libnode-darwin-x64 package",
         "kind": "platform-package",
         "availability": "shipped",
         "visibility": "public",

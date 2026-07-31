@@ -42,6 +42,8 @@ artifact_dirs = ["dist/node", "build/Release", "build/stage", "build/npm", "node
 cache_dirs = [
   "/Users/gha-runner/.cache/kungfu/build-cache/ccache/libnode/darwin-arm64",
   "/Users/gha-runner/.cache/kungfu/build-cache/sccache/libnode/darwin-arm64",
+  "/Users/runner/.cache/kungfu/build-cache/ccache/libnode/darwin-x64",
+  "/Users/runner/.cache/kungfu/build-cache/sccache/libnode/darwin-x64",
   "/home/gha-runner/.cache/kungfu/build-cache/ccache/libnode/linux-x64",
   "/home/gha-runner/.cache/kungfu/build-cache/sccache/libnode/linux-x64",
   "/home/runner/.cache/kungfu/build-cache/ccache/libnode/linux-x64",

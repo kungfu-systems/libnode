@@ -36,11 +36,12 @@ jobs:
       release-candidate-workflow-name: ${{ startsWith(github.ref_name, 'release/') && 'Release - Verify' || 'Build' }}
       artifact-patterns: |
         libnode-macos-arm64-*
+        libnode-macos-x64-*
         libnode-linux-x64-*
         libnode-linux-arm64-*
         libnode-windows-x64-*
       required-status-check: build
-      required-artifact-count: 4
+      required-artifact-count: 5
       publish-mode: publish-final-version
       publish-dist-tag: ${{ startsWith(github.ref_name, 'alpha/') && 'alpha' || 'latest' }}
       publish-package-set-order: platforms-first-main-last
