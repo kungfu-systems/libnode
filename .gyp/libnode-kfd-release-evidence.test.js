@@ -17,25 +17,13 @@ test('KFD-3 prebuild witness mirrors every authoritative public surface', () => 
 
   assert.deepEqual(witnessedSurfaceIds, authoritativeSurfaceIds);
   assert.ok(witnessedSurfaceIds.includes('npm:platform-linux-arm64'));
-  assert.ok(witnessedSurfaceIds.includes('npm:platform-darwin-x64'));
   assert.equal(prebuild.collaborationInterface.digest, prebuild.collaborationInterfaceDigest);
 });
 
-test('KFD-2 public release claim covers the five-platform package set', () => {
+test('KFD-2 public release claim covers the four-platform package set', () => {
   const trustClaim = readJson('.buildchain/kfd-2/public-release-trust.claim.json');
   const artifactNames = trustClaim.artifacts.map(({ name }) => name);
 
-  assert.match(trustClaim.claim, /five-platform package set/);
+  assert.match(trustClaim.claim, /four-platform package set/);
   assert.ok(artifactNames.includes('@kungfu-tech/libnode-linux-arm64'));
-  assert.ok(artifactNames.includes('@kungfu-tech/libnode-darwin-x64'));
-});
-
-test('Build and promotion workflows require the native macOS x64 artifact', () => {
-  const buildWorkflow = fs.readFileSync(path.join(repoRoot, '.github/workflows/build.yml'), 'utf8');
-  const releaseWorkflow = fs.readFileSync(path.join(repoRoot, '.github/workflows/release-new-version.yml'), 'utf8');
-
-  assert.match(buildWorkflow, /"id":"macos-x64"/);
-  assert.match(buildWorkflow, /"runner":"\[\\"macos-15-intel\\"\]"/);
-  assert.match(releaseWorkflow, /libnode-macos-x64-\*/);
-  assert.match(releaseWorkflow, /required-artifact-count: 5/);
 });

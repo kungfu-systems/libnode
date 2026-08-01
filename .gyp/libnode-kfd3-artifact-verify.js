@@ -14,8 +14,7 @@ const payloadRoot = path.resolve(
 
 const packageNames = {
   main: '@kungfu-tech/libnode',
-  darwinArm64: '@kungfu-tech/libnode-darwin-arm64',
-  darwinX64: '@kungfu-tech/libnode-darwin-x64',
+  darwin: '@kungfu-tech/libnode-darwin-arm64',
   linuxX64: '@kungfu-tech/libnode-linux-x64',
   linuxArm64: '@kungfu-tech/libnode-linux-arm64',
   windows: '@kungfu-tech/libnode-win32-x64',
@@ -136,16 +135,14 @@ function main() {
 
   const files = {
     main: findPackageTarball(packageNames.main),
-    darwinArm64: findPackageTarball(packageNames.darwinArm64),
-    darwinX64: findPackageTarball(packageNames.darwinX64),
+    darwin: findPackageTarball(packageNames.darwin),
     linuxX64: findPackageTarball(packageNames.linuxX64),
     linuxArm64: findPackageTarball(packageNames.linuxArm64),
     windows: findPackageTarball(packageNames.windows),
   };
 
   verifyMainPackage(files.main);
-  verifyDarwinPackage(files.darwinArm64);
-  verifyDarwinPackage(files.darwinX64);
+  verifyDarwinPackage(files.darwin);
   verifyLinuxPackage(files.linuxX64);
   verifyLinuxPackage(files.linuxArm64);
   verifyWindowsPackage(files.windows);
@@ -188,12 +185,6 @@ function main() {
       surface(
         'npm:platform-darwin-arm64',
         '@kungfu-tech/libnode-darwin-arm64 package',
-        'platform-package',
-        '.gyp/node-platform-package.js',
-      ),
-      surface(
-        'npm:platform-darwin-x64',
-        '@kungfu-tech/libnode-darwin-x64 package',
         'platform-package',
         '.gyp/node-platform-package.js',
       ),

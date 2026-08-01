@@ -11,10 +11,6 @@ const platformPackageRequirements = {
     binaries: [/^package\/dist\/node\/libnode\.\d+\.dylib$/],
     aliases: [{ target: 'package/dist/node/libnode.dylib', helper: 'package/ensure-libnode-aliases.js' }],
   },
-  '@kungfu-tech/libnode-darwin-x64': {
-    binaries: [/^package\/dist\/node\/libnode\.\d+\.dylib$/],
-    aliases: [{ target: 'package/dist/node/libnode.dylib', helper: 'package/ensure-libnode-aliases.js' }],
-  },
   '@kungfu-tech/libnode-linux-x64': {
     binaries: [/^package\/dist\/node\/libnode\.so\.\d+$/],
     aliases: [{ target: 'package/dist/node/libnode.so', helper: 'package/ensure-libnode-aliases.js' }],
