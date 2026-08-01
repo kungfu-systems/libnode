@@ -33,9 +33,9 @@
     {
       "name": "package-manifest",
       "sourcePath": "package.json",
-      "sourceSha256": "de626755c62f2b3b252e0680b86e5dcddab7fdf8207ed76627e8c780d3210f56",
+      "sourceSha256": "58595a23baf50d1590a231a728056696b9fdf15f196d3d94dff40f55c1206820",
       "artifactPath": "package.json",
-      "expectedSha256": "de626755c62f2b3b252e0680b86e5dcddab7fdf8207ed76627e8c780d3210f56",
+      "expectedSha256": "58595a23baf50d1590a231a728056696b9fdf15f196d3d94dff40f55c1206820",
       "byteForByte": true
     },
     {
@@ -49,9 +49,9 @@
     {
       "name": "buildchain-config",
       "sourcePath": "buildchain.toml",
-      "sourceSha256": "3e9634b497b36eb78d3ea5eb0063fc49a98a32d6d34d34047aa5fe72e4de2f58",
+      "sourceSha256": "3013c0ee402d8925416f3426da63cb901bf9cfcd9bbdb674cfd5ec210a3bfbc0",
       "artifactPath": "buildchain.toml",
-      "expectedSha256": "3e9634b497b36eb78d3ea5eb0063fc49a98a32d6d34d34047aa5fe72e4de2f58",
+      "expectedSha256": "3013c0ee402d8925416f3426da63cb901bf9cfcd9bbdb674cfd5ec210a3bfbc0",
       "byteForByte": true
     },
     {
