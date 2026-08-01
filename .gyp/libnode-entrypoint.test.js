@@ -29,13 +29,20 @@ function loadEntrypoint(platform, arch) {
   return { exports, loadedPackages };
 }
 
-test('Linux ARM64 resolves the published platform package', () => {
-  const loaded = loadEntrypoint('linux', 'arm64');
+for (const [platform, arch, identity, packageName] of [
+  ['darwin', 'arm64', 'darwin-arm64', '@kungfu-tech/libnode-darwin-arm64'],
+  ['linux', 'arm64', 'linux-arm64', '@kungfu-tech/libnode-linux-arm64'],
+  ['linux', 'x64', 'linux-x64', '@kungfu-tech/libnode-linux-x64'],
+  ['win32', 'x64', 'win32-x64', '@kungfu-tech/libnode-win32-x64'],
+]) {
+  test(`${identity} resolves the published platform package`, () => {
+    const loaded = loadEntrypoint(platform, arch);
 
-  assert.deepEqual(loaded.loadedPackages, ['@kungfu-tech/libnode-linux-arm64']);
-  assert.equal(loaded.exports.platform, 'linux-arm64');
-  assert.equal(loaded.exports.platformPackageName, '@kungfu-tech/libnode-linux-arm64');
-});
+    assert.deepEqual(loaded.loadedPackages, [packageName]);
+    assert.equal(loaded.exports.platform, identity);
+    assert.equal(loaded.exports.platformPackageName, packageName);
+  });
+}
 
 test('macOS x64 remains explicitly unsupported', () => {
   assert.throws(() => loadEntrypoint('darwin', 'x64'), /Unsupported libnode platform: darwin-x64/);
