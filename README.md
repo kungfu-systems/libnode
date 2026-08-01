@@ -12,8 +12,11 @@ npm install @kungfu-tech/libnode
 
 The main package resolves the matching platform package installed through npm
 optional dependencies, such as `@kungfu-tech/libnode-darwin-arm64`,
-`@kungfu-tech/libnode-darwin-x64`, `@kungfu-tech/libnode-linux-x64`,
-`@kungfu-tech/libnode-linux-arm64`, or `@kungfu-tech/libnode-win32-x64`.
+`@kungfu-tech/libnode-linux-x64`, `@kungfu-tech/libnode-linux-arm64`, or
+`@kungfu-tech/libnode-win32-x64`.
+
+macOS x86_64 (`darwin-x64`) is explicitly unsupported and is not part of the
+build, release-verification, or publication matrices.
 
 ### Compile and Link
 
@@ -35,8 +38,6 @@ The `Build` workflow runs through Kungfu Buildchain and builds the Node.js versi
 Linux ARM64 is built on the native GitHub-hosted `ubuntu-24.04-arm` runner and
 participates in the same source lock, artifact summary, and release passport as
 the other supported platforms.
-macOS x64 is built natively on GitHub-hosted `macos-15-intel`; Rosetta
-observation is not accepted as x64 package evidence.
 
 Npm publication is handled by Buildchain release-candidate promotion. Reviewed
 channel PRs build the release candidate once and upload the platform package

@@ -37,10 +37,6 @@ test('Linux ARM64 resolves the published platform package', () => {
   assert.equal(loaded.exports.platformPackageName, '@kungfu-tech/libnode-linux-arm64');
 });
 
-test('macOS x64 resolves the published platform package', () => {
-  const loaded = loadEntrypoint('darwin', 'x64');
-
-  assert.deepEqual(loaded.loadedPackages, ['@kungfu-tech/libnode-darwin-x64']);
-  assert.equal(loaded.exports.platform, 'darwin-x64');
-  assert.equal(loaded.exports.platformPackageName, '@kungfu-tech/libnode-darwin-x64');
+test('macOS x64 remains explicitly unsupported', () => {
+  assert.throws(() => loadEntrypoint('darwin', 'x64'), /Unsupported libnode platform: darwin-x64/);
 });
