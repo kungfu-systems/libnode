@@ -116,6 +116,8 @@ __pypackages__/
 .buildchain/
 !.buildchain/
 .buildchain/*
+!.buildchain/contract-lock.json
+!.buildchain/alpha-contract-lock.json
 !.buildchain/kfd-1/
 !.buildchain/kfd-1/**
 !.buildchain/kfd-2/
