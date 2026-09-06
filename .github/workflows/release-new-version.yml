@@ -23,13 +23,13 @@ concurrency:
 
 jobs:
   promote:
-    uses: kungfu-systems/buildchain/.github/workflows/release-candidate-promote.yml@v3-alpha
+    uses: kungfu-systems/buildchain/.github/workflows/release-candidate-promote.yml@v4-alpha
     secrets: inherit
     with:
       package-manager: pnpm
       buildchain-channel: auto
-      buildchain-alpha-contract-lock-path: buildchain.alpha-contract-lock.json
-      buildchain-stable-contract-lock-path: buildchain.contract-lock.json
+      buildchain-alpha-contract-lock-path: .buildchain/alpha-contract-lock.json
+      buildchain-stable-contract-lock-path: .buildchain/contract-lock.json
       buildchain-contract-drift-issue-mode: compatible-and-breaking
       artifact-name: libnode
       release-candidate-workflow-file: ${{ startsWith(github.ref_name, 'release/') && 'release-verify.yaml' || 'build.yml' }}
@@ -41,7 +41,6 @@ jobs:
         libnode-windows-x64-*
       required-status-check: build
       required-artifact-count: 4
-      publish-mode: publish-final-version
       publish-dist-tag: ${{ startsWith(github.ref_name, 'alpha/') && 'alpha' || 'latest' }}
       publish-package-set-order: platforms-first-main-last
       publish-package-main: '@kungfu-tech/libnode'
@@ -52,8 +51,4 @@ jobs:
       publication-target: npm:@kungfu-tech/libnode
       publication-package-name: '@kungfu-tech/libnode'
       release-passport-product-name: Libnode
-      release-passport-kfd-1-witness-jsons: .buildchain/kfd-1/libnode-contract-world.witness.json
-      release-passport-kfd-2-claim-jsons: .buildchain/kfd-2/public-release-trust.claim.json
-      release-passport-kfd-3-prebuild-witness-jsons: .buildchain/kfd-3/collaboration-interface.prebuild.json
-      release-passport-kfd-3-artifact-verify-command: node .gyp/libnode-kfd3-artifact-verify.js .buildchain/release-candidate/payloads
       github-release: true
