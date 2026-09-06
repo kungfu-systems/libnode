@@ -4,7 +4,7 @@
     "name": "kungfu-trader",
     "email": "info@kungfu.link"
   },
-  "version": "22.22.3-kf.5-alpha.3",
+  "version": "22.22.3-kf.5-alpha.4",
   "description": "Build shared node lib",
   "license": "Apache-2.0",
   "main": "src/js/index.js",
@@ -40,6 +40,7 @@
     "verify-kfd-witnesses": "node .gyp/libnode-kfd-witnesses.js check",
     "verify-kfd3-artifact": "node .gyp/libnode-kfd3-artifact-verify.js",
     "verify-package-source": "node .gyp/node-platform-package.js verify-source",
+    "verify-platform-policy": "node .gyp/libnode-platform-policy.js && node --test .gyp/libnode-platform-policy.test.js",
     "format": "prettier --write --parser typescript .gyp/*.js src/js/*.js"
   },
   "packageManager": "pnpm@11.9.0",

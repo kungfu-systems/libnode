@@ -6,6 +6,6 @@
 /.github/CODEOWNERS @kungfu-origin
 /.github/workflows/ @kungfu-origin
 /buildchain.toml @kungfu-origin
-/buildchain.contract-lock.json @kungfu-origin
-/buildchain.alpha-contract-lock.json @kungfu-origin
+/.buildchain/contract-lock.json @kungfu-origin
+/.buildchain/alpha-contract-lock.json @kungfu-origin
 /libnode.release.json @kungfu-origin

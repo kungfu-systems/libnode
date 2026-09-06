@@ -10,18 +10,18 @@
   "contractWorld": {
     "id": "libnode-release-contract",
     "schemaId": "https://kfd.libkungfu.dev/schemas/kfd-1/contract-world.schema.json",
-    "digest": "sha256:30ba96a39aba6cd56222a785b4e9c0e9864ecf414d51a74ddfefee9c3ae8b1bc"
+    "digest": "sha256:3501d41477306ffca52f58991423e7aeb69bf759d5e35904f19864b1b37cb54a"
   },
   "standardContract": {
     "id": "libnode-release-contract",
     "path": "libnode.release.json",
-    "sha256": "30ba96a39aba6cd56222a785b4e9c0e9864ecf414d51a74ddfefee9c3ae8b1bc"
+    "sha256": "3501d41477306ffca52f58991423e7aeb69bf759d5e35904f19864b1b37cb54a"
   },
   "selfHostingBoundary": {
     "mode": "self-hosted-standard-contract",
     "sourceScope": "Libnode release manifest, package metadata, package builder, KFD declarations, and Buildchain release workflow.",
-    "artifactScope": "Checked-out promotion source surfaces plus KFD-3 artifact witness over the npm package set.",
-    "boundary": "Buildchain verifies declared KFD-1 source surfaces byte-for-byte before release passport finalization.",
+    "artifactScope": "Checked-out release candidate source surfaces plus KFD-3 artifact witness over the npm package set.",
+    "boundary": "The required build check uses the resolved Buildchain runtime to verify declared KFD-1 source surfaces byte-for-byte before release admission.",
     "residualRisk": []
   },
   "responsibility": {
@@ -33,25 +33,25 @@
     {
       "name": "package-manifest",
       "sourcePath": "package.json",
-      "sourceSha256": "de626755c62f2b3b252e0680b86e5dcddab7fdf8207ed76627e8c780d3210f56",
+      "sourceSha256": "b36b6479a7241dd0b09be8cd8002b59cc860c65f34b9007bc9a15f97b899feda",
       "artifactPath": "package.json",
-      "expectedSha256": "de626755c62f2b3b252e0680b86e5dcddab7fdf8207ed76627e8c780d3210f56",
+      "expectedSha256": "b36b6479a7241dd0b09be8cd8002b59cc860c65f34b9007bc9a15f97b899feda",
       "byteForByte": true
     },
     {
       "name": "release-manifest",
       "sourcePath": "libnode.release.json",
-      "sourceSha256": "30ba96a39aba6cd56222a785b4e9c0e9864ecf414d51a74ddfefee9c3ae8b1bc",
+      "sourceSha256": "3501d41477306ffca52f58991423e7aeb69bf759d5e35904f19864b1b37cb54a",
       "artifactPath": "libnode.release.json",
-      "expectedSha256": "30ba96a39aba6cd56222a785b4e9c0e9864ecf414d51a74ddfefee9c3ae8b1bc",
+      "expectedSha256": "3501d41477306ffca52f58991423e7aeb69bf759d5e35904f19864b1b37cb54a",
       "byteForByte": true
     },
     {
       "name": "buildchain-config",
       "sourcePath": "buildchain.toml",
-      "sourceSha256": "3e9634b497b36eb78d3ea5eb0063fc49a98a32d6d34d34047aa5fe72e4de2f58",
+      "sourceSha256": "3013c0ee402d8925416f3426da63cb901bf9cfcd9bbdb674cfd5ec210a3bfbc0",
       "artifactPath": "buildchain.toml",
-      "expectedSha256": "3e9634b497b36eb78d3ea5eb0063fc49a98a32d6d34d34047aa5fe72e4de2f58",
+      "expectedSha256": "3013c0ee402d8925416f3426da63cb901bf9cfcd9bbdb674cfd5ec210a3bfbc0",
       "byteForByte": true
     },
     {
@@ -81,9 +81,9 @@
     {
       "name": "release-workflow",
       "sourcePath": ".github/workflows/release-new-version.yml",
-      "sourceSha256": "4034d36e9820d152eee70d4f7e34d08ce597893042206bde88443e2256d12212",
+      "sourceSha256": "3233c31a0920410ef6974ecbdb75fe7f9ed205774e45dc1772cad63a8851a59f",
       "artifactPath": ".github/workflows/release-new-version.yml",
-      "expectedSha256": "4034d36e9820d152eee70d4f7e34d08ce597893042206bde88443e2256d12212",
+      "expectedSha256": "3233c31a0920410ef6974ecbdb75fe7f9ed205774e45dc1772cad63a8851a59f",
       "byteForByte": true
     },
     {
@@ -97,9 +97,9 @@
     {
       "name": "kfd3-prebuild-witness",
       "sourcePath": ".buildchain/kfd-3/collaboration-interface.prebuild.json",
-      "sourceSha256": "d9577384ae3690fadb3739635f88c209e456ca5eed69c2c2fe1fb3c76a47d0b5",
+      "sourceSha256": "50b2cde8d5cb7eaa0923cced75f60ea41cff98026eab0b68093cd599c077a802",
       "artifactPath": ".buildchain/kfd-3/collaboration-interface.prebuild.json",
-      "expectedSha256": "d9577384ae3690fadb3739635f88c209e456ca5eed69c2c2fe1fb3c76a47d0b5",
+      "expectedSha256": "50b2cde8d5cb7eaa0923cced75f60ea41cff98026eab0b68093cd599c077a802",
       "byteForByte": true
     }
   ]

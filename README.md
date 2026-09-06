@@ -1,3 +1,21 @@
+---
+status: active
+period: ongoing
+theme: libnode-build-and-release
+doc_type: technical-reference
+source_level: local-files
+confidence: high
+sensitivity: public
+evidence_grade: B
+review_state: unreviewed
+last_reviewed: 2026-09-06
+ai_provenance:
+  model_family: GPT-6
+  product: Codex
+  generated_at: 2026-09-06
+  invisible_context_boundary: Package publication and platform runtime results require separate live verification.
+---
+
 # Shared lib (so/dylib/dll) for Node.js
 
 This project provides shared lib for [Node.js](https://nodejs.org).
@@ -14,6 +32,9 @@ The main package resolves the matching platform package installed through npm
 optional dependencies, such as `@kungfu-tech/libnode-darwin-arm64`,
 `@kungfu-tech/libnode-linux-x64`, `@kungfu-tech/libnode-linux-arm64`, or
 `@kungfu-tech/libnode-win32-x64`.
+
+macOS x86_64 (`darwin-x64`) is explicitly unsupported and is not part of the
+build, release-verification, or publication matrices.
 
 ### Compile and Link
 
@@ -36,15 +57,21 @@ Linux ARM64 is built on the native GitHub-hosted `ubuntu-24.04-arm` runner and
 participates in the same source lock, artifact summary, and release passport as
 the other supported platforms.
 
-Npm publication is handled by Buildchain release-candidate promotion. Reviewed
-channel PRs build the release candidate once and upload the platform package
-artifacts, build summary, and release-candidate passport. After the channel
-branch is updated, the reusable Buildchain promotion workflow reuses that
-PR-stage evidence, locks the matching `publish-gate/<channel>/<line>/<version>`
-ref to the channel commit, generates npm package-set requirements from the
-downloaded tarballs, and publishes through the configured dist-tag. The exact
-npm version is read from `package.json` and `libnode.release.json`; it is not
-passed by hand through the workflow.
+Alpha publication uses Buildchain v4. Reviewed channel PRs build the candidate
+once, then the required `build` check verifies the main tarball and all four
+platform tarballs together, runs KFD-1 and KFD-3 gates with the same resolved
+Buildchain runtime, and retains their evidence and artifact witness. Promotion
+reuses those exact bytes, seals the complete package inventory, and publishes
+platform packages before the main package. Each package receives independent
+npm integrity readback; an interrupted publication can observe matching
+versions without republishing them. Release refs move after the complete set
+is confirmed.
+
+The npm version comes from `package.json` and `libnode.release.json`, preserving
+the Node anchor and libnode revision. The `anchored/manual` version policy
+requires an explicit next anchor after alpha publication. This migration
+qualifies alpha package-set publication; v4 stable package-set rematerialization
+remains unsupported and fails before publication.
 
 npm publication uses GitHub Trusted Publishing from the GitHub-hosted publish
 job. The workflow does not use `NPM_PUSH_TOKEN` or npm dist-tag recovery tokens
