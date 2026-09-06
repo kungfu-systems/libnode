@@ -1,0 +1,12 @@
+{
+  "schema": "kungfu.buildchain.signed-channel/v1",
+  "subject": {
+    "repository": "kungfu-systems/libnode",
+    "sourceSha": "b5d5ef258a22693902016947767273ca2dc147e7",
+    "version": "22.22.3-kf.5-alpha.4",
+    "tag": "v22.22.3-kf.5-alpha.4",
+    "channel": "alpha"
+  },
+  "qualificationRoot": "sha256:25ec74b783ba4e1920ee671658acef1a2bf210fa628b2c5c221699d344c92b3a",
+  "releaseAssetsRoot": "sha256:9db57070de3a090d5f387084a39786293559358c23732475fbfe52ec243a1bba"
+}
